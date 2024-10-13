@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  nextjsboilerplate:
+    container_name: nextjsboilerplate
+    image: node:21-alpine
+    environment:
+      - NODE_ENV=${ENV:-development}
+      - BASE_URL=${BASE_URL_AR:-http://localhost:8000}
+      - LOCALE=${LOCALE:-pt-BR}
+      - BRAND=${BRAND:-BR}
+      - PORT=${PORT:-8000}
+    cpus: 2
+    mem_limit: 6g
+    network_mode: "host"
+    volumes:
+      - ./:/usr/local/app
+    restart: always
+    working_dir: /usr/local/app
+    entrypoint: "sh"
+    command: '-c "yarn && yarn dev:start"'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 15m
+        max-file: "5"
+        labels: nextjsboilerplate
+        env: ${ENV:-development}

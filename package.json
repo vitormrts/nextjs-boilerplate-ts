@@ -1,0 +1,27 @@
+{
+  "name": "nextjs-boilerplate2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:start": "next dev -p $PORT",
+    "dev:lint": "next lint",
+    "generate": "yarn plop --plopfile ./generators/plop",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/styled-components": "^5.1.34",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "plop": "2.7.4",
+    "typescript": "^5"
+  }
+}
